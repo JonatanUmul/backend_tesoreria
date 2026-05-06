@@ -12,8 +12,9 @@ export const getOrderDetail = async ({Num_pedido}) => {
 
 }
 
-export const updateUpdateDocNumOrder = async(id, DocNum, tipoDocumento) =>{
+export const updateUpdateDocNumOrder = async(id, DocNum, tipoDocumento, U_V3_FCE_Enlace) =>{
+        console.log('en services',U_V3_FCE_Enlace)
     console.log('A123456',id, DocNum, tipoDocumento)
     if(!id && !DocNum && !tipoDocumento) throw new Error("El DocNum es es requerido")
-        return await orderRepository.updateUpdateDocNumOrder(id, DocNum, tipoDocumento)
+        return await orderRepository.updateUpdateDocNumOrder(id, DocNum, tipoDocumento, U_V3_FCE_Enlace)
 }

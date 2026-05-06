@@ -10,6 +10,7 @@ import itemCodeRoutes from "./routes/itemCodeRoutes.routes.js"
 import socioDeNegocioRoutes from "./routes/socioDeNegocioRoutes.routes.js"
 import sapRoutes from "./routes/sap.route.js"
 import sapHanaRoutes from "./routes/sapHana.route.js"
+import logModificacionesRoutes from "./routes/logModificaciones.route.js"
 import { errorHandler } from './middlewares/errorHandler.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -49,7 +50,7 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '20mb' }));
 
 app.get('/', (req, res) => {
-  res.send('API Ecofiltro funcionando 🚀');
+  res.send('API Ecofiltro funcionando ');
 });
 app.use('/eco_api/users', userRouter);
 app.use('/eco_api/orders', ordersRoutes);
@@ -57,6 +58,7 @@ app.use('/eco_api/itemCode', itemCodeRoutes);
 app.use('/eco_api/socioDeNegocio', socioDeNegocioRoutes);
 app.use('/eco_api/sap', sapRoutes);
 app.use('/eco_api/sapHana', sapHanaRoutes);
+app.use('/eco_api/log', logModificacionesRoutes);
 
 app.use(errorHandler);
 

@@ -38,7 +38,7 @@ export const buildSapOrderPayload = (payload) => {
     U_V3_FCE_FBODepto: payload.CardCode === "C00162" ? 'COMPRAS' : null,
     U_V3_FCE_FBOOC: payload.CardCode === "C00162" ? payload.U_OC : null,
     U_V3_FCE_FBOFecha: payload.CardCode === "C00162" ? formatFecha(payload.date_oc) : null,
-    U_FE_Res: "Fel-Campo",
+    U_FE_Res: "Fel-Distribuidores",
     DocCurrency: "QTZ",
     DocumentLines: payload.items.map((item) => ({
       ItemCode: item.modelo,
@@ -77,10 +77,11 @@ export const buildSapOrderPayload = (payload) => {
     U_DocNom: payload.U_DoctoNom,
     U_FacNit: payload.U_FacNit,
     U_Nit: payload.U_FacNit,
-     U_V3_FCE_FBODepto: payload.CardCode === "C00162" ? 'COMPRAS' : null,
+    U_V3_FCE_Enlace: "https://report.feel.com.gt/ingfacereport/ingfacereport_documento?uuid=7D1B95DC-0022-43B2-B5D0-E3F40E5C543A",
+    U_V3_FCE_FBODepto: payload.CardCode === "C00162" ? 'COMPRAS' : null,
     U_V3_FCE_FBOOC: payload.CardCode === "C00162" ? payload.U_OC : null,
     U_V3_FCE_FBOFecha: payload.CardCode === "C00162" ? formatFecha(payload.date_oc) : null,
-    U_FE_Res: "Fel-Campo",
+    U_FE_Res: "Fel-Distribuidores",
     DocCurrency: "QTZ",
     DocumentLines: payload.items.map((item) => ({
       ItemCode: item.modelo,

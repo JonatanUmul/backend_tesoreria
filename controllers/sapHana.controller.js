@@ -6,7 +6,6 @@ export const getCentrosDeCostosController = async (req, res, next) => {
   try {
     const socio_Negocio = req.query.values;
     const data = await sapService.getCentrosDeCostosController(socio_Negocio);
-    console.log(data)
     res.status(200).json({
       ok: true,
       data,

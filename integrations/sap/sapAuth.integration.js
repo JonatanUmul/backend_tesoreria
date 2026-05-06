@@ -5,11 +5,12 @@ import { setSession } from "../../config/sapSession.js";
 export const loginSapIntegration = async () => {
   const body = {
     CompanyDB: process.env.SAP_COMPANY_DB,
+    //CompanyDB: 'SBO_ECOFILTRO_PRODUCCION',
     UserName: process.env.SAP_USER,
     Password: process.env.SAP_PASSWORD,
     Language: 25,
   };
-console.log(body)
+console.log('body',body)
   try {
     const response = await axios.post(
       `${process.env.SAP_BASE_URL}/Login`,

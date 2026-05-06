@@ -49,18 +49,30 @@ import dotenv from 'dotenv';
 
 // Cargar las variables de entorno desde el archivo .env
    dotenv.config();
-   const BD =  process.env.DB_URL;
+   const BD =  process.env.DB;
+   const DBPASSWORD =  process.env.DBPASSWORD;
+   const DBUSER =  process.env.DBUSER;
+   const DBHOST =  process.env.DBHOST;
 
 
-export const pool= createPool({
+/*export const pool= createPool({
     host: "ecofiltro.net",
     user:'finanzaseco',
     password: 'aJFpLKnJALX2ETkt',
     port:3306,  
     database:'finanzas',
     //database: DB,
-})
+})*/
 
+export const pool= createPool({
+    host: DBHOST,
+    user:DBUSER,
+    password: DBPASSWORD,
+    port:3306,  
+    database:BD,
+    //database: DB,
+})
+console.log('conexiones', pool)
 
 pool.getConnection()
     .then(connection => {

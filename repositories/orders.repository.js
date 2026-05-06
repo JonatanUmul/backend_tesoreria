@@ -12,12 +12,12 @@ export const getOrderDetail = async(Num_pedido) =>{
     return rows
 }
 
-export const updateUpdateDocNumOrder = async(id,DocNum, tipoDocumento) =>{
-    
+export const updateUpdateDocNumOrder = async(id,DocNum, tipoDocumento, U_V3_FCE_Enlace) =>{
+    console.log('een repositoru',U_V3_FCE_Enlace)
     const estado=tipoDocumento
-    const qr=`update orden_compra set DocNum=?, estado=? where id_oc=?`
+    const qr=`update orden_compra set DocNum=?, estado=?, U_V3_FCE_Enlace=? where id_oc=?`
              // update orden_compra set DocNum="1234" where id_oc=44
-    const [rows] = await pool.query(qr,[DocNum, estado, id ])
+    const [rows] = await pool.query(qr,[DocNum, estado, U_V3_FCE_Enlace, id ])
     console.log('respuest',rows)
     return rows
 }

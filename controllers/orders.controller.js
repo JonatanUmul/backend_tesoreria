@@ -35,9 +35,11 @@ export const updateUpdateDocNumOrder = async(req, res, next)=>{
     const id  = req.query.id
     const DocNum  = req.query.DocNum
     const tipoDocumento  = req.query.tipoDocumento
+    const U_V3_FCE_Enlace  = req.query.U_V3_FCE_Enlace
+    console.log('en controllers',req.query)
 
     try {
-         const data = await ordersService.updateUpdateDocNumOrder(id, DocNum, tipoDocumento)
+         const data = await ordersService.updateUpdateDocNumOrder(id, DocNum, tipoDocumento, U_V3_FCE_Enlace)
         res.status(200).json({
             ok:true,
             data,
