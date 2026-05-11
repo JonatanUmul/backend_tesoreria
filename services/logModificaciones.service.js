@@ -13,7 +13,7 @@ export const post_modificaciones = async (value) => {
   console.log('post_modificaciones',value)
   if (!value)
     throw new Error(
-      "Parametros es requerido",
+      "Sin log para procesar",
     );
   return await logDeModificaciones.postLogModificaciones(value);
 };

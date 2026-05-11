@@ -5,7 +5,6 @@ export const get_OrderHeaders=async(req, res, next)=>{
    
     try {
         const data = await ordersService.get_OrderHeaders({opcion});
-        console.log(data)
         res.status(200).json({
             ok:true,
             data,

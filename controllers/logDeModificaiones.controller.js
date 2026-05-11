@@ -15,7 +15,7 @@ console.log('valores',value)
     }
 }
 export const postLogModificaciones =async(req, res, next) =>{
-    const value = req.query.values
+    const value = req.body.params
 
     try {
         const data = await LogModificacion.post_modificaciones(value)
@@ -25,6 +25,7 @@ export const postLogModificaciones =async(req, res, next) =>{
             message:"Log de modificaciones aplicado correctamente"
         })
     } catch (error) {
+        console.log(error)
         next(error)
     }
 }
