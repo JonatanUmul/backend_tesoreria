@@ -1,9 +1,9 @@
 import * as orderRepository from "../repositories/orders.repository.js";
 
 
-export const get_OrderHeaders = async ({ opcion }) => {
+export const get_OrderHeaders = async ({ opcion, id_email, fechaInicio, fechaFin }) => {
     if(!opcion) throw new Error("El parametro opcion es requerido");
-    return await orderRepository.get_OrderHeader(opcion)
+    return await orderRepository.get_OrderHeader(opcion, id_email, fechaInicio, fechaFin)
 }
 
 export const getOrderDetail = async ({Num_pedido}) => {

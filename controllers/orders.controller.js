@@ -1,10 +1,15 @@
 import * as ordersService from "../services/orders.service.js"
 
 export const get_OrderHeaders=async(req, res, next)=>{
-    const opcion = req.query.opcion;
-   
+    const filtros = req.query
+    console.log('aca123',filtros)
+    const opcion = filtros['filtros[op]'];
+    const id_email = filtros['filtros[id_email]'];
+    const fechaInicio = filtros['filtros[fechaInicio]'];
+    const fechaFin = filtros['filtros[fechaFin]'];
+
     try {
-        const data = await ordersService.get_OrderHeaders({opcion});
+        const data = await ordersService.get_OrderHeaders({opcion, id_email, fechaInicio, fechaFin});
         res.status(200).json({
             ok:true,
             data,

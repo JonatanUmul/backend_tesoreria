@@ -1,7 +1,6 @@
 import { sapRequest } from "./sapClient.js";
 
 export const createSapOrderIntegration = async (payload) => {
-  console.log('aca123',payload)
   return await sapRequest({
     method: "POST",
     endpoint: "/Orders",

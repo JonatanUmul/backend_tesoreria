@@ -1,8 +1,10 @@
 import { pool } from "../config/connection.js";
 
-export const get_OrderHeader = async (opcion) => {
-    const qr="CALL get_ov_pedidoHeaderCompleto(?)"
-    const [rows] =await pool.query(qr,[opcion])
+export const get_OrderHeader = async (opcion, id_email, fechaInicio, fechaFin) => {
+    console.log('op', opcion, id_email, fechaInicio, fechaFin)
+    const qr="CALL get_ov_pedidoHeaderCompleto(?, ?, ?, ?)"
+    const [rows] =await pool.query(qr,[opcion, id_email, fechaInicio, fechaFin])
+    console.log(rows)
     return rows
 }
 

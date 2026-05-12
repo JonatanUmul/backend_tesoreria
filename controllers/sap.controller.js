@@ -54,11 +54,6 @@ export const getInventoryByItemController = async (req, res, next) => {
 export const createSalesOrderInSapController = async (req, res, next) => {
   try {
     const data = await sapService.createSalesOrderInSap(req.body.payload);
-    const id = req.body.payload.id;
-    const DocNumSAP=data.DocNum;
-    const a={
-      id, DocNumSAP
-    }
     res.status(200).json([{
       ok: true,
       data: data,

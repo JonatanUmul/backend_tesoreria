@@ -18,8 +18,8 @@ export const buildSapOrderPayload = (payload) => {
     DocType: "dDocument_Items",
     /*DocDate: formatFecha(payload.date_oc),
     DocDueDate: formatFecha(payload.date_oc),*/
-    DocDate: hoy,
-    DocDueDate:hoy,
+    DocDate: payload.date_oc,
+    DocDueDate:payload.date_oc,
     U_Nombre: payload.U_DoctoNom,
     CardCode: payload.CardCode,
     JournalMemo: `Pedidos de cliente - ${payload.CardCode}`,
@@ -55,11 +55,11 @@ export const buildSapOrderPayload = (payload) => {
   }:
    {
     DocType: "dDocument_Items",
-    /*DocDate: formatFecha(payload.date_oc),
-    DocDueDate: formatFecha(payload.date_oc),*/
+    DocDate: payload.date_oc,
+    DocDueDate: payload.date_oc,
     Series: 133,
-    DocDate: hoy,
-    DocDueDate:hoy,
+    /*DocDate: hoy,
+    DocDueDate:hoy,*/
     U_Nombre: payload.U_DoctoNom,
     CardCode: payload.CardCode,
     DocObjectCode: "oInvoices",
